@@ -211,7 +211,7 @@ $.fn.accordion = function(parameters) {
                 .addClass(className.active)
               ;
               module.reset.display.call(this);
-              settings.onOpen.call(this);
+              settings.onOpen.call(this, this);
               settings.onChange.call(this);
             })
           ;
@@ -580,7 +580,7 @@ $.fn.accordion.settings = {
   onClosing       : function(){}, // callback before closing animation
   onChanging      : function(){}, // callback before closing or opening animation
 
-  onOpen          : function(){}, // callback after open animation
+  onOpen          : function($selected){}, // callback after open animation
   onClose         : function(){}, // callback after closing animation
   onChange        : function(){}, // callback after closing or opening animation
 
